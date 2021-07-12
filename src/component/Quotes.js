@@ -6,10 +6,13 @@ import React from 'react'
         <div>
             <div id="quote-box">
                 <div id="text">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum error molestiae commodi, blanditiis temporibus nisi amet labore mollitia quis, enim quidem quaerat maiores hic eius necessitatibus animi debitis nemo voluptatem.
-                    Iusto maxime blanditiis dolorum laborum distinctio id maiores deserunt fugiat corporis quidem reprehenderit odio esse, modi ratione ipsum minima fuga qui fugit. Nostrum voluptatum velit ullam consectetur cupiditate. Pariatur, laudantium.
-                    Numquam repellat quo, eligendi vero dignissimos magni asperiores praesentium amet vel impedit, tenetur quibusdam unde. Perspiciatis aliquam earum explicabo, est nisi veniam rem itaque nihil sint doloremque ipsum pariatur voluptatibus?
-                    Adipisci, repellendus!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum error molestiae commodi</p>
+                </div>
+
+                <div id="author">
+                    <p>
+                        Emmanuel Olaide
+                    </p> 
                 </div>
 
                 <div id="buttons">
