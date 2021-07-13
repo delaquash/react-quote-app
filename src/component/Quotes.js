@@ -1,7 +1,20 @@
 
-import React from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import tumblr from '../tumblr.svg';
+import twitter from '../twitter.svg';
 
  const Quotes =() =>{
+    const [quote, setQuote] = useState('')
+    const [author, setAuthor] = useState('')
+
+    useEffect(() => {
+        const getQuotes = async () => {
+            const response = await axios.get('https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json');
+            console.log(response.data);
+        }
+        getQuotes()
+    }, [])
     return (
         <div>
             <div id="quote-box">
@@ -17,14 +30,14 @@ import React from 'react'
 
                 <div id="buttons">
                     <div className="social-media">
-                        <a href="#" id="tweet-quote">
+                        <a href="#id" id="tumblr-quote">
                             <span>
-                                <img src="" alt=""/>
+                                <img src={tumblr} alt=""/>
                             </span>
                         </a>
-                        <a href="#" id="tweet-quote">
+                        <a href="#id" id="tweet-quote">
                             <span>
-                                <img src="" alt=""/>
+                                <img src={twitter} alt=""/>
                             </span>
                         </a>
 

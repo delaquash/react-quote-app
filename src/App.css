@@ -32,3 +32,48 @@ body {
   font-size: 1.2rem;
   justify-content: flex-end;
 }
+
+#buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+
+.social-media {
+  display: flex;
+}
+
+.social-media > a {
+  margin-right: .5rem;
+  background: #0059ff;
+  padding: .3rem .5rem;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.social-media > a img {
+  width: 1.5rem;
+}
+
+.social-media > a:hover {
+  opacity: .9;
+}
+
+
+#new-quote {
+  border: 1px;
+  border-radius: 5px;
+  padding: 7px;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  background-color:blue;
+  font-weight: bold;
+  font-size: 1.9rem;
+}
+
+#new-quote:hover {
+  opacity: 0.9;
+}
