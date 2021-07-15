@@ -1,35 +1,49 @@
 
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import tumblr from '../tumblr.svg';
 import twitter from '../twitter.svg';
+
+let API_URL = 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json'
 
  const Quotes =() =>{
     const [quote, setQuote] = useState('');
     const [author, setAuthor] = useState('');
 
     useEffect(() => {
-        const getQuotes = async () => {
-            const response = await axios
-                .get('https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json')
-                    .then(res => res.json());
-                    .then(data => {
-                        let data = data.quotes;
-                        let randomNum = Math.floor(Math.random() * data.length);
-                    }) 
-        };
         getQuotes()
-    }, [])
+    },
+        
+    [])
+
+    const getQuotes =  () => {
+            fetch(API_URL)
+            .then(res =>res.json())
+            .then(data => {
+                let dataQuotes = data.quotes;
+                let randomNum = Math.floor(Math.random() * dataQuotes.length);
+                let randomQuote = dataQuotes[randomNum]
+
+                console.log(randomQuote);
+
+                setQuote(randomQuote.quote)
+                setAuthor(randomQuote.author)
+            })            
+    };
+
+const handleClick = ()=> {
+    getQuotes()
+}
+
     return (
         <div>
             <div id="quote-box">
                 <div id="text">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum error molestiae commodi</p>
+                    <p>{quote}</p>
                 </div>
 
                 <div id="author">
                     <p>
-                        Emmanuel Olaide
+                        {author}
                     </p> 
                 </div>
 
@@ -47,7 +61,7 @@ import twitter from '../twitter.svg';
                         </a>
 
                     </div>
-                    <button id="new-quote">New Quote</button>
+                    <button onClick={handleClick} id="new-quote">New Quote</button>
                 </div>
             </div>
         </div>
