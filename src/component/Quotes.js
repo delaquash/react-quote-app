@@ -11,9 +11,7 @@ let API_URL = 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c3
 
     useEffect(() => {
         getQuotes()
-    },
-        
-    [])
+    },     [])
 
     const getQuotes =  () => {
             fetch(API_URL)
@@ -22,7 +20,6 @@ let API_URL = 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c3
                 let dataQuotes = data.quotes;
                 let randomNum = Math.floor(Math.random() * dataQuotes.length);
                 let randomQuote = dataQuotes[randomNum]
-
                 console.log(randomQuote);
 
                 setQuote(randomQuote.quote)
